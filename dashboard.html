@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M&E Toolkit - Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="assets/icon.png" type="image/png">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header class="app-header">
+            <div class="header-left">
+                <img src="assets/logo.png" alt="App Logo" class="logo" id="appLogo">
+                <h1>M&E Toolkit</h1>
+            </div>
+            <div class="header-right">
+                <div class="user-info">
+                    Logged in as: <span id="userNameDisplay">User</span> (<span id="userRoleDisplay">Role</span>)
+                </div>
+                <button id="logoutButton" class="button logout">Logout</button>
+            </div>
+        </header>
+
+        <div class="dashboard-content">
+            <nav id="mainNav">
+                <h3>Forms Menu</h3>
+                <ul id="formNavList">
+                    <!-- Form navigation links will be populated by forms.js -->
+                    <!-- Example: <li><a href="#" data-formkey="health">Health Monitoring</a></li> -->
+                </ul>
+                <hr style="margin: 15px 0; border-color: #546E7A;">
+                <h3>Offline Data</h3>
+                <ul id="offlineNavList">
+                     <li><a href="#" id="viewPendingLink">View/Sync Pending (<span id="pendingCount">0</span>)</a></li>
+                </ul>
+            </nav>
+
+            <main id="formDisplayArea">
+                <h2 id="currentFormTitle">Welcome</h2>
+                <p id="welcomeMessage">Select a form from the menu to start collecting data, or manage your offline submissions.</p>
+                <div id="dynamicFormContainer">
+                    <!-- Form HTML will be rendered here by forms.js -->
+                </div>
+                <div id="pendingSubmissionsContainer" class="hidden">
+                    <!-- Pending submissions will be listed here -->
+                </div>
+            </main>
+        </div>
+        
+        <div id="statusMessagesContainer" class="hidden">
+            <!-- General status messages will appear here -->
+        </div>
+        <div id="offlineIndicator" class="hidden">You are currently offline. Data will be saved locally.</div>
+        <div id="syncIndicator" class="hidden">
+            <!-- Sync status will appear here, e.g., "Syncing..." or "X items pending" -->
+        </div>
+
+
+        <footer class="app-footer">
+            <p>&copy; 2023 M&E Toolkit for South Sudan</p>
+        </footer>
+    </div>
+
+    <script src="config.js"></script> 
+    <script src="login.js"></script> <!-- For handleUserLogout function -->
+    <script src="forms.js"></script>
+</body>
+</html>

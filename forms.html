@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M&E Toolkit - Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#4A90E2">
+</head>
+<body>
+    <div class="forms-container">
+        <header class="app-header">
+            <h1>M&E Toolkit</h1>
+            <div class="header-right">
+                <span class="user-role" id="userRoleDisplay">Role</span>
+                <button id="logoutButton" class="button secondary">Logout</button>
+            </div>
+        </header>
+
+        <nav id="formTabsContainer">
+            <!-- Tabs will be dynamically inserted here by forms.js -->
+            <ul>
+                <!-- Example: <li><a href="#" class="tab-link active" data-formid="SupervisorVerifications">Supervisor Verifications</a></li> -->
+            </ul>
+        </nav>
+
+        <main id="formDisplayArea">
+            <!-- Forms will be dynamically rendered here by forms.js -->
+            <p class="text-center" id="initialMessage">Select a form from the tabs above to begin, or to view/sync pending submissions.</p>
+        </main>
+        
+        <div id="offlineStatus" style="display:none;">
+            You are currently offline. Submissions will be saved locally.
+        </div>
+        <div id="syncNotification" style="display:none;">
+            <span id="syncCount">0</span> pending submission(s).
+            <button id="retrySyncButton" class="button sync">Sync Now</button>
+            <button id="viewPendingButton" class="button">View/Edit</button>
+        </div>
+         <div id="syncStatus" style="display:none;"></div>
+    </div>
+
+    <footer>
+        <p>&copy; 2023 M&E Toolkit</p>
+    </footer>
+
+    <script src="config.js"></script>
+    <!-- login.js contains the handleLogout function, so it's needed if logout button is used directly -->
+    <!-- However, forms.js will handle its own event listener for logout -->
+    <script src="login.js"></script> 
+    <script src="forms.js"></script>
+</body>
+</html>
