@@ -1,0 +1,76 @@
+{
+  "formId": "audit",
+  "title": "Audit Trail Checklist",
+  "sheetName": "Audit",
+  "fields": [
+    {
+      "name": "auditId",
+      "label": "Audit Record ID",
+      "type": "text",
+      "isId": true,
+      "required": true,
+      "readonlyOnEdit": true,
+      "placeholder": "Auto-generated"
+    },
+    {
+      "name": "submissionTimestamp",
+      "label": "Timestamp",
+      "type": "datetime-local",
+      "autoPopulate": "datetime",
+      "required": true,
+      "readonlyOnEdit": true
+    },
+    {
+      "name": "auditDate",
+      "label": "Date of Audit Activity",
+      "type": "date",
+      "autoPopulate": "date",
+      "required": true
+    },
+    {
+      "name": "auditedEntity",
+      "label": "Department/Project Audited",
+      "type": "text",
+      "required": true,
+      "placeholder": "e.g., Finance Department, WASH Project X"
+    },
+    {
+      "name": "auditArea",
+      "label": "Audit Area/Focus",
+      "type": "select",
+      "required": true,
+      "options": ["", "Financial Records", "Procurement Process", "Inventory Management", "Compliance with Policy", "Asset Verification", "Programmatic Performance", "Other"]
+    },
+    {
+      "name": "findingReference",
+      "label": "Finding Reference/Document ID",
+      "type": "text",
+      "placeholder": "e.g., FIN-001, PR-Compliance-Check-03"
+    },
+    {
+      "name": "observation",
+      "label": "Observation/Finding",
+      "type": "textarea",
+      "required": true
+    },
+    {
+      "name": "recommendation",
+      "label": "Recommendation",
+      "type": "textarea"
+    },
+    {
+      "name": "riskLevel",
+      "label": "Risk Level",
+      "type": "select",
+      "options": ["", "Low", "Medium", "High", "Critical"]
+    },
+    {
+      "name": "auditorName",
+      "label": "Auditor Name",
+      "type": "text",
+      "fromUser": "userNameDisplay",
+      "required": true,
+      "readonly": true
+    }
+  ]
+}
